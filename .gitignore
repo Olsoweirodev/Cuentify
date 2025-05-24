@@ -1,0 +1,50 @@
+# Node.js and Next.js dependencies
+node_modules/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+logs/
+pnpm-log*.log
+
+# Next.js build files
+.next/
+out/
+next-env.d.ts
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# macOS system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# Build and cache files
+*.cache
+dist/
+build/
+
+# Test coverage reports
+coverage/
+
+# Firebase cache and build files
+.firebase/
+firebase.json
+.firebaserc
+
+.next/
+node_modules/
+
