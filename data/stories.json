@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "title": "Kayıp Şehir",
+    "author": "Alex",
+    "excerpt": "Bir maceracı, ormanda gizli bir şehir keşfeder.",
+    "content": "Bir maceracı, ormanda gizli bir şehir keşfeder. Bu şehir, yıllardır kayıp olan bir medeniyetin kalıntılarını barındırıyordu. Maceracı, şehirdeki sırları çözmeye çalışırken beklenmedik tehlikelerle karşılaşır...",
+    "category": "Macera"
+  },
+  {
+    "id": "2",
+    "title": "Yıldızlı Geceler",
+    "author": "Maya",
+    "excerpt": "Yıldızların altında romantik bir hikaye.",
+    "content": "Yıldızların altında romantik bir hikaye. İki genç, bir yaz gecesinde tanışır ve birbirlerine aşık olur. Ancak ailelerinin geçmişindeki sırlar, bu aşkı tehdit etmeye başlar...",
+    "category": "Romantizm"
+  },
+  {
+    "id": "3",
+    "title": "Ejderhanın İni",
+    "author": "Sam",
+    "excerpt": "Cesur bir şövalye, vahşi bir ejderhayla yüzleşir.",
+    "content": "Cesur bir şövalye, vahşi bir ejderhayla yüzleşir. Ejderha, köyü yıllardır korku içinde tutmaktadır. Şövalye, köylüleri kurtarmak için ejderhanın inine doğru tehlikeli bir yolculuğa çıkar...",
+    "category": "Fantastik"
+  }
+]

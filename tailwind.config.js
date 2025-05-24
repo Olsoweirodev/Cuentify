@@ -8,15 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FF5E00", // Ana renk (turuncu)
-        secondary: "#1F2937", // Koyu gri (başlıklar için)
-        accent: "#F3F4F6", // Açık gri (arka planlar için)
+        primary: "#FF5E00", // Ana renk (turuncu, Wattpad’in turuncusu)
+        secondary: "#FFFFFF", // Beyaz (metinler için)
+        accent: "#121212", // Koyu arka plan (Wattpad benzeri)
+        card: "#1E1E1E", // Kartlar için koyu gri
+        muted: "#B0B0B0", // Açık gri (ikincil metinler için)
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"], // Inter fontu
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(to bottom, #FF5E00, #F3F4F6)", // Hero bölümü için gradient
+        "hero-gradient": "linear-gradient(to bottom, #FF5E00, #121212)", // Hero bölümü için gradient
         "story-pattern": "url('/pattern-bg.png')", // Hikaye bölümü için desen (isteğe bağlı)
       },
     },
