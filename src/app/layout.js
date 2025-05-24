@@ -1,15 +1,32 @@
+"use client";
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { auth } from "../lib/firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
+
+// Client-side bileşen olduğunu belirtmek için "use client" ekliyoruz
+export const dynamic = "force-dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Cuentify",
-  description: "Dünya çapında hikayeler paylaşabileceğiniz ve keşfedebileceğiniz bir platform.",
-};
-
+// Client-side layout bileşeni
 export default function RootLayout({ children }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const handleSignOut = async () => {
+    await signOut(auth);
+  };
+
   return (
     <html lang="tr">
       <body className={`${inter.className} bg-accent text-secondary`}>
@@ -20,28 +37,6 @@ export default function RootLayout({ children }) {
               <span className="text-2xl font-bold text-primary">Cuentify</span>
             </Link>
             <div className="flex items-center space-x-6">
-              {/* Arama Çubuğu */}
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Hikaye ara..."
-                  className="bg-accent text-secondary placeholder-muted border border-gray-600 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-                <svg
-                  className="absolute right-3 top-2.5 h-5 w-5 text-muted"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
-              </div>
               {/* Navigasyon Bağlantıları */}
               <div className="flex space-x-6">
                 <Link href="/">
@@ -50,15 +45,31 @@ export default function RootLayout({ children }) {
                 <Link href="/about">
                   <span className="text-muted hover:text-primary transition">Hakkında</span>
                 </Link>
-                <Link href="/login">
-                  <span className="text-muted hover:text-primary transition">Giriş Yap</span>
-                </Link>
-                <Link href="/signup">
-                  <span className="text-muted hover:text-primary transition">Kayıt Ol</span>
-                </Link>
-                <Link href="/profile">
-                  <span className="text-muted hover:text-primary transition">Profil</span>
-                </Link>
+                {user ? (
+                  <>
+                    <Link href="/write">
+                      <span className="text-muted hover:text-primary transition">Hikaye Yaz</span>
+                    </Link>
+                    <Link href="/profile">
+                      <span className="text-muted hover:text-primary transition">Profil</span>
+                    </Link>
+                    <button
+                      onClick={handleSignOut}
+                      className="text-muted hover:text-primary transition"
+                    >
+                      Çıkış Yap
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/login">
+                      <span className="text-muted hover:text-primary transition">Giriş Yap</span>
+                    </Link>
+                    <Link href="/signup">
+                      <span className="text-muted hover:text-primary transition">Kayıt Ol</span>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
