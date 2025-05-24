@@ -8,7 +8,6 @@ export default function SearchStories() {
   const [filteredStories, setFilteredStories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Hikayeleri JSON’dan yükle
   useEffect(() => {
     const fetchStories = async () => {
       const res = await fetch('/api/stories');
@@ -19,7 +18,6 @@ export default function SearchStories() {
     fetchStories();
   }, []);
 
-  // Arama işlevselliği
   useEffect(() => {
     const filtered = stories.filter(
       (story) =>
@@ -36,7 +34,6 @@ export default function SearchStories() {
 
   return (
     <>
-      {/* Arama Çubuğu */}
       <div className="container mx-auto px-4 py-8">
         <div className="relative max-w-md mx-auto">
           <input
@@ -44,7 +41,7 @@ export default function SearchStories() {
             placeholder="Hikaye, yazar veya kategori ara..."
             value={searchTerm}
             onChange={handleSearch}
-            className="w-full bg-accent text-secondary placeholder-muted border border-gray-600 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full bg-surface text-secondary placeholder-muted border border-gray-600 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
           />
           <svg
             className="absolute right-3 top-3.5 h-5 w-5 text-muted"
@@ -63,16 +60,15 @@ export default function SearchStories() {
         </div>
       </div>
 
-      {/* Hikaye Bölümü */}
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-secondary mb-8 text-center">
           Öne Çıkan Hikayeler
         </h2>
         {filteredStories.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredStories.map((story) => (
               <Link href={`/stories/${story.id}`} key={story.id}>
-                <div className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer">
+                <div className="card p-6">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xl font-semibold text-primary">
                       {story.title}
@@ -81,7 +77,7 @@ export default function SearchStories() {
                       {story.category}
                     </span>
                   </div>
-                  <p className="text-muted mb-4">Yazar: {story.author}</p>
+                  <p className="text-muted mb-2">Yazar: {story.author}</p>
                   <p className="text-muted">{story.excerpt}</p>
                 </div>
               </Link>

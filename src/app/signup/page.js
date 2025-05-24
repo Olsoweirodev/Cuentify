@@ -24,7 +24,7 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="bg-card p-8 rounded-lg shadow-lg max-w-md w-full">
+      <div className="card p-8 max-w-md w-full">
         <h1 className="text-3xl font-bold text-secondary mb-6 text-center">Kayıt Ol</h1>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         <form className="space-y-4" onSubmit={handleSignup}>
@@ -37,7 +37,7 @@ export default function Signup() {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="Kullanıcı adınızı girin"
               required
             />
@@ -51,7 +51,7 @@ export default function Signup() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="ornek@eposta.com"
               required
             />
@@ -65,14 +65,14 @@ export default function Signup() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="Şifrenizi girin"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-primary text-secondary font-semibold py-3 rounded-lg hover:bg-orange-600 transition shadow-md"
+            className="w-full py-3"
           >
             Kayıt Ol
           </button>

@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
-// Firebase yapılandırma bilgileri (Firebase Console’dan kopyaladığın bilgiler)
 const firebaseConfig = {
   apiKey: "AIzaSyDgVm_OGwcbFrczb1tCr8Gq3j0euZt-_SM",
   authDomain: "cuentify-123.firebaseapp.com",
@@ -11,10 +11,8 @@ const firebaseConfig = {
   appId: "1:430479061222:web:f20451660c2a2223958b27"
 };
 
-// Firebase’i başlat
 const app = initializeApp(firebaseConfig);
-
-// Authentication modülünü al
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { auth };
+export { auth, db };

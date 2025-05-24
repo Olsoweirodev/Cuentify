@@ -8,18 +8,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FF5E00", // Ana renk (turuncu, Wattpad’in turuncusu)
-        secondary: "#FFFFFF", // Beyaz (metinler için)
-        accent: "#121212", // Koyu arka plan (Wattpad benzeri)
-        card: "#1E1E1E", // Kartlar için koyu gri
-        muted: "#B0B0B0", // Açık gri (ikincil metinler için)
-      },
-      fontFamily: {
-        inter: ["Inter", "sans-serif"], // Inter fontu
+        background: "#121212", // Koyu arka plan (Wattpad benzeri)
+        surface: "#1E1E1E", // Kartlar ve yüzeyler için hafif açık koyu renk
+        primary: "#FF6F61", // Canlı bir kırmızı-turuncu (düğmeler ve vurgular için)
+        secondary: "#E0E0E0", // Açık gri-beyaz (metinler için)
+        muted: "#A0A0A0", // Soluk gri (ikincil metinler için)
+        accent: "#2A2A2A", // Hafif açık koyu renk (vurgular için)
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(to bottom, #FF5E00, #121212)", // Hero bölümü için gradient
-        "story-pattern": "url('/pattern-bg.png')", // Hikaye bölümü için desen (isteğe bağlı)
+        "hero-gradient": "linear-gradient(135deg, #1E1E1E 0%, #121212 100%)", // Daha sade bir gradient
+      },
+      boxShadow: {
+        "custom": "0 4px 12px rgba(0, 0, 0, 0.3)", // Daha yumuşak gölgeler
+        "custom-hover": "0 6px 16px rgba(0, 0, 0, 0.4)", // Hover durumunda daha belirgin gölge
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"], // Daha modern bir font
       },
     },
   },

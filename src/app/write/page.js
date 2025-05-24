@@ -62,7 +62,7 @@ export default function Write() {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="Hikaye başlığını girin"
               required
             />
@@ -76,7 +76,7 @@ export default function Write() {
               id="excerpt"
               value={excerpt}
               onChange={(e) => setExcerpt(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="Hikayenin kısa bir özetini girin"
               required
             />
@@ -89,7 +89,7 @@ export default function Write() {
               id="content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               placeholder="Hikayenizi buraya yazın"
               rows="10"
               required
@@ -103,7 +103,7 @@ export default function Write() {
               id="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full p-3 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-accent text-secondary"
+              className="w-full p-3"
               required
             >
               <option value="">Kategori seçin</option>
@@ -114,7 +114,7 @@ export default function Write() {
           </div>
           <button
             type="submit"
-            className="w-full bg-primary text-secondary font-semibold py-3 rounded-lg hover:bg-orange-600 transition shadow-md"
+            className="w-full py-3"
           >
             Hikayeyi Paylaş
           </button>

@@ -22,10 +22,10 @@ export default function Profile() {
           Yazdığım Hikayeler
         </h2>
         {user.stories.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {user.stories.map((story) => (
               <Link href={`/stories/${story.id}`} key={story.id}>
-                <div className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer">
+                <div className="card p-6">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xl font-semibold text-primary">
                       {story.title}

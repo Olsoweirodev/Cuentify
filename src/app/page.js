@@ -1,8 +1,7 @@
 ﻿import Image from 'next/image';
 import Link from 'next/link';
-import SearchStories from './SearchStories'; // Yeni bir Client Component oluşturacağız
+import SearchStories from './SearchStories';
 
-// Metadata’ı burada tanımlıyoruz (Server Component)
 export const metadata = {
   title: "Cuentify",
   description: "Dünya çapında hikayeler paylaşabileceğiniz ve keşfedebileceğiniz bir platform.",
@@ -21,7 +20,7 @@ export default function Home() {
             alt={`${appName} Logosu`}
             width={150}
             height={150}
-            className="mx-auto mb-6 rounded-full shadow-lg border-4 border-secondary"
+            className="mx-auto mb-6 rounded-full shadow-custom border-4 border-primary"
           />
           <h1 className="text-5xl font-bold text-secondary mb-4">
             {`${appName}\'e Hoş Geldiniz`}
@@ -30,7 +29,7 @@ export default function Home() {
             Dünya çapında hikayeler paylaşabileceğiniz ve keşfedebileceğiniz bir platform.
           </p>
           <Link href="/about">
-            <span className="inline-block bg-primary text-secondary font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition shadow-md">
+            <span className="inline-block bg-primary text-secondary font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition-all shadow-custom">
               Daha Fazla Bilgi
             </span>
           </Link>

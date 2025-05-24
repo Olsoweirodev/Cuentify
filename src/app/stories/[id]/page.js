@@ -5,12 +5,10 @@ import path from 'path';
 export default async function StoryDetail({ params }) {
   const { id } = params;
 
-  // JSON dosyasını oku
   const filePath = path.join(process.cwd(), 'data', 'stories.json');
   const fileContents = await fs.readFile(filePath, 'utf8');
   const stories = JSON.parse(fileContents);
 
-  // ID'ye göre hikayeyi bul
   const story = stories.find((s) => s.id === id);
 
   if (!story) {
@@ -38,12 +36,12 @@ export default async function StoryDetail({ params }) {
         </div>
       </div>
       <div className="container mx-auto px-4 py-16">
-        <div className="bg-card p-8 rounded-lg shadow-md">
+        <div className="card p-8">
           <p className="text-muted leading-relaxed">{story.content}</p>
         </div>
         <div className="mt-6 text-center">
           <Link href="/">
-            <span className="inline-block bg-primary text-secondary font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition shadow-md">
+            <span className="inline-block py-3 px-8">
               Ana Sayfaya Dön
             </span>
           </Link>
